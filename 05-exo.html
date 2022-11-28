@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+        <article>
+            <h2>{{articles[0].titre}}</h2>
+            <button>{{articles[0].id}}</button>
+        </article>
+
+        <article>
+            <h2>{{articles[1].titre}}</h2>
+            <button>{{articles[1].id}}</button>
+        </article>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        Vue.createApp({
+            data : () => {
+                return {
+                    articles : [
+                        {id : 1, titre : "article 1"},
+                        {id : 2, titre : "article 2"},
+
+                    ]
+                }
+            }
+        }).mount("#app")
+    </script>
+
+</body>
+</html>

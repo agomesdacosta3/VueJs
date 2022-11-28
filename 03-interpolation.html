@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ titre }}</h1>
+        <button>nb like {{ like }}</button>
+        <p>{{ img }}</p>
+        <br />
+        <!-- cette balise n'existe pas dans vuejs <></> mais existe dans React Fragment -->
+        <ul>
+            <li>{{ etudiants[0] }}</li>
+            <li>{{ etudiants[1] }}</li>
+            <li>{{ etudiants[2] }}</li>
+        </ul>
+        <h2>{{ fleur.id }} -  {{ fleur.nom }}</h2>
+        <p>{{ isAdmin }}</p>
+        <pre>
+            {{ JSON.stringify(etudiants) }}
+        </pre>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        Vue.createApp({
+            data : () => {
+                return {
+                    titre : "Découverte de VueJS",
+                    like : 33,
+                    etudiants : ["Alain", "Benoît", "Céline"],
+                    fleur : {id : 1, nom : "rose"},
+                    isAdmin : true
+                }
+            }
+        }).mount("#app")
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+cas pratique créer un nouveau fichier 05-exo.html utilisant vue js 
+
+créer dans le state local de votre application 1 valeurs :
+- articles : [ {id : 1 , titre : "article 1"}, {id : 2 , titre : "article 2"}]
+
+afficher dans la vue le code suivant en utilisant les variables dans du state de l'app
+
+<p>accéder à la page suivante :</p>
+<article>
+    <h2>article 1</h2>
+    <button>1</button>
+</article>
+<article>
+    <h2>article 2</h2>
+    <button>2</button>
+</article>

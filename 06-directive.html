@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="toto">
+        <h2>utiliser une variable du state comme valeur d'un attribut de balise </h2>
+        <img v-bind:src="img" alt="" v-bind:id="identifiant">
+        <h2>autre manière </h2>
+        <img :src="img" alt="" :id="identifiant">
+        <img :src="(a === true) ? img : img2" alt="">
+        <p>{{ text }}</p>
+        <p v-html="text"></p><!-- si votre variable stocke du html -->
+        <p v-text="text"></p>
+        <!-- directive src  v-bind:src="img" 
+        et dans les "" img est considéré comme une variable javascript -->
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data : () => {
+                return {
+                    text : "<span>un peu de texte </span>" , 
+                    identifiant : "toto", 
+                    a : false , 
+                    img : "https://via.placeholder.com/400x200",
+                    img2 : "https://via.placeholder.com/200x100",
+                }
+            }
+        }).mount(".toto")
+    </script>
+</body>
+</html>
