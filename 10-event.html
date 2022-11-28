@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "app" >
+
+        <button v-on:click = btn1>Action</button>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        Vue.createApp({
+
+            methods : {
+                btn1 : function () {
+                    alert("J'ai cliqué sur le bouton")
+                }
+            }
+
+        }).mount("#app")
+    </script>
+
+</body>
+</html>

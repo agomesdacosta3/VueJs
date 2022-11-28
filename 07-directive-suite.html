@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--  directive 
+        v-bind:src / v-bind:href 
+        v-html / v-text comme attribut de vos balises 
+        v-show => display:none display:block 
+        v-if v-else-if v-else => conditions pour afficher une élément
+    -->
+        <p v-show="afficher">{{ text }}</p>
+        <p v-if="fleurs.length === 0">aucune fleur</p>
+        <p v-else-if="fleurs.length <= 3">{{ JSON.stringify(fleurs) }}</p>
+        <p v-else>response inconnue ??</p>
+        <h2>réaliser une boucle dans une vue</h2>
+        <ul>
+            <li v-for="fleur in fleurs">{{ fleur }}</li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data : () => {
+                return {
+                    afficher : true ,
+                    text : "bonjour tout le monde",
+                    fleurs : ["rose","jasmin", "margueritte", "autre fleur"]
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>

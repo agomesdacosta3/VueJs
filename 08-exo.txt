@@ -1,0 +1,20 @@
+créer le fichier 09-exo.html
+
+ce fichier utilise vue 
+une fois installé, ce composant stocké une variable data 
+qui retourne une fonction qui retourne un objet qui contient les variables suivantes 
+user : {
+    id : 1 ,
+    nom : Alain
+    competences : ["js" , "node", "angular"],
+    age : 18 
+}
+dans le composant afficher le template le html suivant :
+<h1>Alain</h1>
+<ul>
+    <li>js</li>
+    <li>node</li>
+    <li>angular</li>
+</ul>
+si la valeur de age < 18 => <p>il est mineur</p>
+si la valeur de age >= 18 => <p>il est majeur</p>
