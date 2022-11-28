@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>classique</h2>
+        <input type="text" :value="text"  @input="change($event)">
+        <input type="text" v-bind:value="text"  v-on:input="change($event)">
+        <!-- v-bind et v-on -->
+        <p>{{ text }}</p>
+        <h2>utilisation de v-model</h2>
+        <input type="text" v-model="text2"><!-- two way binding -->
+        <!-- model MVVC -->
+        <p>{{ text2 }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data : () => {
+                return { text : "" , text2 : "toto"}
+            },
+            methods : {
+                change : function(e){
+                    this.text = e.target.value
+                }
+            }
+        }).mount("#app")
+        // action => modifier propriété => modifier la vue 
+        // autre manière de réaliser => two way binding 
+        // on peut réaliser une action qui modifier une variable directement dans la vue 
+        // dans les formulaires => écrire dans un champ => modification d'une variable 
+    </script>
+</body>
+</html>

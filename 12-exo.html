@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="action(0)">bouton 1</button>
+        <button @click="action(1)">bouton 2</button>
+        <button @click="action(2)">bouton 3</button>
+        <p v-if="index === 0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, ipsum.</p>
+        <p v-else-if="index === 1">Deserunt voluptate at repellendus. Laborum necessitatibus eius quos odio aliquid.</p>
+        <p  v-else>Consectetur quos delectus similique quaerat sint quasi corrupti praesentium distinctio!</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data : () => {
+                return {index : 0}
+            },
+            methods : {
+                action : function(index){
+                    this.index = index
+                }
+            }
+
+        }).mount("#app")
+    </script>
+</body>
+</html>

@@ -7,25 +7,55 @@
     <title>Document</title>
 </head>
 <body>
-    <div id = "app" >
-
-        <button v-on:click = btn1>Action</button>
-
+    <div id="app">
+        <h2>première manière</h2>
+        <button v-on:click="btn1">Action</button>
+        <h2>manière courte</h2>
+        <button @click="btn1">Action</button>
+        <h2>deuxième bouton</h2>
+        <button v-on:click="btn2">Toggle</button>
+        <button @click="btn2">Toggle</button>
+        <p v-if="afficher">etat 1</p>
+        <p v-else>etat 2</p>
+        <h2>event avec boucle </h2>
+        <ul>
+            <li v-for="f in formations">
+                {{f.nom}} <button @click="show(f)"> action </button> 
+                <span v-if="f.etat">est disponible au programme</span>
+                <span v-else> n'est disponible pas au programme</span>
+            </li>
+        </ul>
+    <a href="https://google.fr" @click="action( $event , 1)">accéder à google</a>
+    <!-- attention si j'ai besoin d'agir sur l'évènement il faut noter l'évènement avec $event 
+        attention au nom du paramètre -->
     </div>
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
     <script>
         Vue.createApp({
-
-            methods : {
-                btn1 : function () {
-                    alert("J'ai cliqué sur le bouton")
+            data : () => {
+                return { 
+                    afficher : false ,
+                    formations : [{ nom : "js" , etat : true } , { nom :"node" , etat : false }]
+                 }
+            },
+            methods : { // attention au nom de la propiété methods
+                action : function(e , number){
+                    e.preventDefault(); 
+                    console.log(e.target.href, number); 
+                },
+                show : function(f){
+                    f.etat = !f.etat
+                },
+                btn1 : function(){
+                    alert("j'ai cliqué sur le bouton")
+                } , 
+                btn2 : function () { // si vous avez this dans la fonction
+                    // il faut que btn2 stocke une function(){} et non une fonction fléchée
+                    // si j'ai besoin d'accéder à une propriété stockée dans data 
+                    this.afficher = !this.afficher // modifier directement 
                 }
             }
-
         }).mount("#app")
     </script>
-
 </body>
 </html>
