@@ -1,0 +1,11 @@
+cas pratique 
+créer un nouveau fichier 30-exo.html qui contient une app vue 
+
+créer un composant qui s'appelle <compteur></compteur>
+
+le composant compteur doit retourner ce html
+<button>-</button><span>0</span><button>+</button>
+
+si vous cliquez sur le bouton - diminer la valeur de 0
+si vous cliquez sur le bouton + augmenter la valeur de 0
+0 doit être stocké dans un data dans le composant

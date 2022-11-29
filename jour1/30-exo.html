@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">  
+        <div>
+            <h2>premier compteur</h2>
+            <composant-compteur></composant-compteur>
+            <!-- premier syntaxe possible -->
+        </div>
+        <div>
+            <h2>deuxième compteur</h2>
+            <composant-compteur />
+            <!-- deuxième syntaxe possible -->
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+    const compteur = {
+        data : () => {
+            return {
+                nb : 0
+            }
+        },
+        methods : {
+            plus : function(){
+                this.nb++ ;
+            },
+            moins : function(){
+                this.nb-- ;
+            }
+        },
+        template : `
+            <button @click="moins">-</button>
+            <span>{{ nb }}</span>
+            <button @click="plus">+</button>
+        `
+    }
+
+    // composant racine 
+    Vue.createApp({
+        components : { "composant-compteur" : compteur } 
+    }).mount("#app")
+</script>
+</body>
+</html>
+</body>
+</html>

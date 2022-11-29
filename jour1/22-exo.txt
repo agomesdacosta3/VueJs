@@ -1,0 +1,18 @@
+créer un nouveau fichier 23-exo.html
+
+variable cocktails qui est un tableau vide par défaut 
+
+lorsque le composant est monté (c'est à dire associé au DOM) => appeler l'api suivante 
+
+www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+
+veuillez afficher dans le template 
+
+vous devez utiliser computed pour pouvoir réaliser les mise à jour suite à la modification de l'input 
+
+input dans lequel vous vous allez rechercher un cocktail 
+dès que l'input est modifié => relancer une requête => modifier la liste des cocktails affichés 
+boucler sur tous les cocktails récupérés
+    <h1>nom du cocktail</h1>
+    <p>description </p>
+    <img src="image du cocktail" alt="">

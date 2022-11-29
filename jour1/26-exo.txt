@@ -1,0 +1,17 @@
+créer un nouveau fichier 27-exo.html
+
+ce fichier contient un input dans lequel on peut saisir des chiffres 
+
+une fois que vous avez saisit le chiffre => lancer une requête http (ajax via un fetch)
+
+https://jsonplaceholder.typicode.com/posts/1
+https://jsonplaceholder.typicode.com/posts/2
+
+une fois que la requête est réalisée => afficher la title + body dans la vue 
+si jamais il n'y a pas de résultat, afficher dans la vue qu'il n'y a pas de résultat
+
+{
+    watch : {
+        operation 
+    }
+}

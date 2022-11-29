@@ -1,0 +1,95 @@
+node_modules/ => les dépendances du projet 
+
+public/ images / fichier pdf / font / css 
+
+src/ => source
+
+main.js relation entre index.html racine projet 
+<div id="app"></div>
+
+les fichiers .vue les différents composants de votre application 
+
+composant App.vue => composant racine / root de votre application 
+)
+
+Arborescence très trsè simple 
+
+
+=> src/main.js 
+
+Vue.createApp({
+    data : ,
+    methods :
+    computed :
+    mounted : 
+}).mount('#app')
+
+Vue.createApp(App).mount('#app')
+
+App => SFC => Single File Component => html ET toute la logique en javascript ET mise en forme 
+
+App 
+
+{  => API Option 
+    data : ,
+    methods :
+    computed :
+    mounted : 
+}
+
+
+import ... API Composition 
+
+code ..... 
+
+
+// src/App.vue 
+
+
+// HMR  => Hot Module Reload  => si vous êtes en mode développement "npm run dev" 
+// si vous modifiez un fichier dans src => le serveur va se rafraichir de lui meêm
+
+
+
+export default {
+  props: ['foo'],
+  created() {
+    // props are exposed on `this`
+    console.log(this.foo)
+  }
+}
+
+
+<script setup>
+const props = defineProps(['foo'])
+
+console.log(props.foo)
+</script>
+
+=> mettre la première lettre en majuscule 
+
+PascalCase
+PremierComposant 
+
+camelCase 
+
+=> première lettre en majuscule 
+
+Cas pratique 
+
+créer le composant Deuxieme
+
+retourne le html suivant 
+
+<h2>Deuxième composant</h2>
+<ul>
+  <li>on sait désormais</li>
+  <li>installer</li>
+  <li>modifier</li>
+  <li>créer des composants vues version API Options </li>
+</ul>
+
+=> une fois créé => afficher dans App 
+
+Bonus => créer une variable local (state) titre = "Deuxième composant"
+et l'afficher dans le vue 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       
+        <input type="text" @input="update($event)" >
+        <div >
+            {{ resultat }}
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        function Api(value , element){
+            fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+value)
+                    .then(reponse => reponse.json())
+                    .then(({drinks}) =>{
+                        // console.log(drinks);
+                        element.cocktails = drinks
+                    })
+        }
+
+        Vue.createApp({
+            data : () => {
+                return {
+                    recherche : "",
+                    cocktails : []
+                }
+            },
+            methods : {
+                update : function($event){
+                    this.recherche = $event.target.value
+                }
+            },
+            computed : {
+                resultat : async function(){
+                    let data = "";
+                    console.log("excution ")
+                    const resultat = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+this.recherche)
+                    const r = await  resultat.json();
+                    return r.drinks.map(el => {
+                        return `<h1> ${ el.strDrink }</h1>
+                            <p>${ el.strInstructions } </p>
+                            <img src="${ el.strDrinkThumb }" alt="" width="200">
+                        <hr>`
+                    });
+                    
+                }
+            },
+            mounted : function(){
+                Api("margarita" , this)
+            }
+         }).mount("#app")
+        
+    </script>
+</body>
+</html>

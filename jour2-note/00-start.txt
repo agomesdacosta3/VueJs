@@ -1,0 +1,18 @@
+Malik HARRIZ 
+
+malik.h@webdevpro.net
+
+-----------------------
+
+support de cours :
+
+https://formation.webdevpro.net/vuejs
+login : vuejs
+password : vuejs
+
+
+=> https://github.com/webdevproformation/vue-h3-nov-2022
+
+
+
+=> npx create vite

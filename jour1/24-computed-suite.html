@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       
+        <input type="text" v-model="prenom" placeholder="prenom">
+        <input type="text" v-model="nom" placeholder="nom" >
+        <input type="text" v-model="age" >
+        <div >
+            {{ nomComplet }}
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data : () => {
+                return {
+                    prenom : "",
+                    nom : "",
+                    age : 10
+                }
+            },
+            computed : {
+                nomComplet : function(){ // méthode qui est exécutée uniquement si this.prenom ou this.nom sont modifiées
+                    console.log("exécution")
+                    return this.prenom +" "+ this.nom
+                }
+            } 
+         }).mount("#app")
+        
+    </script>
+</body>
+</html>
