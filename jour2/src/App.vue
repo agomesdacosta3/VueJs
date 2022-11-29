@@ -8,6 +8,7 @@ import Troisieme from './components/Troisieme.vue';
 import Quatrieme from './components/Quatrieme.vue';
 import Cinquieme from './components/Cinquieme.vue';
 import Sixieme from './components/Sixieme.vue';
+import Septieme from './components/Septieme.vue';
 
 </script>
 
@@ -19,6 +20,7 @@ import Sixieme from './components/Sixieme.vue';
   <Quatrieme />
   <Cinquieme />
   <Sixieme />
+  <Septieme />
 
 </template>
 
