@@ -1,0 +1,11 @@
+// créer un nouveau fichier 15-exo.html qui utilise VueJS
+
+// formulaire 
+
+case à cocher (checkbox)
+un champ input de type text => écrire du texte
+p qui est vide
+
+si vous cliquez sur la case à cocher et que vous écrivez dans le champ input => ça va remplir le p avec le texte de l'input
+
+si vous décochez la case à cocher => masquer le p 
