@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="checkbox" v-model="verif">
+        <input type="text" :value="text" @input="changement($event)">
+        <p>{{ resultat }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data : () => {
+                return {
+                    verif : false ,
+                    text : ""
+                }
+            },
+            methods : {
+                changement : function(e){
+                    this.text = e.target.value
+                },
+                resultat : function(){ // elle est réexécutée à chaque fois qu'un data est modifié 
+                    // même si la fonction n'a au lien avec les variables 
+                    console.log("la méthode est exécutée ");
+                    return "je suis un texte" + this.text
+                } 
+            },
+            // au premier chargement => exécuté puis la fonction est exécutée uniquement si la propriété this.text est modifié 
+            computed : { // contient des méthodes qui sont exécutées SI une propriété est modifiée 
+                resultat : function(){ 
+                    console.log("la méthode est exécutée ");
+                    return "je suis un texte"+ this.text
+                }
+            } // ressemble beaucoup à la propriété methods mais les fonctions sont exécutées une condition de modification 
+            // useEffect( () => {} , [count])
+        }).mount("#app")
+    </script>
+</body>
+</html>

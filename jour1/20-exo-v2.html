@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" @input="rechercher($event)" >
+        <input type="text" v-model="recherche" @input="rechercher()">
         <div v-for="cocktail in cocktails">
             <h1>{{ cocktail.strDrink }}</h1>
             <p>{{ cocktail.strInstructions }} </p>
@@ -18,12 +18,12 @@
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        function Api(value , element){
+        function Api(value, obj){
             fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+value)
                     .then(reponse => reponse.json())
                     .then(({drinks}) =>{
                         // console.log(drinks);
-                        element.cocktails = drinks
+                        obj.cocktails = drinks
                     })
         }
 
@@ -35,8 +35,8 @@
                 }
             },
             methods : {
-                rechercher : function($event){
-                    Api($event.target.value , this)
+                rechercher : function(){
+                    Api(this.recherche , this)
                 }
             },
             mounted : function(){
