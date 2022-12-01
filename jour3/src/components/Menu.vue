@@ -10,6 +10,11 @@
                     <RouterLink :to="{name:'contact'}" class="nav-link">Contact</RouterLink>
                 </li>
             </ul>
+            <ul class="ms-auto navbar-nav">
+                <li class="nav-item">
+                    <RouterLink :to="{name:'login'}" class="nav-link">Login</RouterLink>
+                </li>
+            </ul>
         </nav>
     </div>
 </template>

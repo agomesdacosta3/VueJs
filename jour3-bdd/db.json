@@ -1,0 +1,11 @@
+{
+    "taches" : [
+        {"id" : 1, "nom" : "apprendre js", "status" : true},
+        {"id" : 2, "nom" : "apprendre Angular", "status" : false},
+        {"id" : 3, "nom" : "creer un e-commerce", "status" : true}
+    ] ,
+
+    "user" : [
+        {"login" : "admin", "password" : "azerty", "isLogged" : false}
+    ]
+}
