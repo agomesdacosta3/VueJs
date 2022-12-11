@@ -1,0 +1,27 @@
+pinia => comme Redux / useContext/createContext 
+
+site officiel => https://pinia.vuejs.org/
+
+state Manager => centraliser des informations dans le state 
+=> les utiliser dans n'importe quelle composant 
+quelque soit sa position 
+
+cd jour3 
+npm i pinia 
+
+// activation sur l'ensemble de notre application 
+
+main.js
+
+créer un store dans lequel vous allez stocker 
+userStore 
+stocker user qui contient les informations suivantes 
+
+{
+    login : "admin",
+    password : "azerty"
+    isLogged : false
+}
+
+lorsque vous remplissez le formulaire de connexion => vous allez vérifier que le login et le password saisis correspondent à ceux stocké dans le store => 
+si c'est correcte => modifier la valeurs de isLogged => true 

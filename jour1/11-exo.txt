@@ -4,8 +4,8 @@ créer un système d'onglet :
 - 3 boutons 
 - 3 p => chacun contenant 10 mots 
 
-si je clique le 1er btn => afficher le 1er p et masquer les autres p
-si je clique le 2ème btn => afficher le 2ème p et masquer les autres p
-si je clique le 3ème btn => afficher le 3ème p et masquer les autres p
+si je clique sur le 1er btn => afficher le 1er p et masquer les autres p
+si je clique sur le 2ème btn => afficher le 2ème p et masquer les autres p
+si je clique sur le 3ème btn => afficher le 3ème p et masquer les autres p
 
 => système d'onglet !  

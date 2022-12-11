@@ -1,0 +1,20 @@
+malik.h@webdevpro.net
+
+-----------------------
+
+support de cours :
+
+https://formation.webdevpro.net/vuejs
+login : vuejs
+password : vuejs
+
+
+=> https://github.com/webdevproformation/vue-h3-nov-2022
+
+=> 
+
+npm create vite 
+jour3 (nom du projet)
+cd jour3
+npm i 
+npm run dev 

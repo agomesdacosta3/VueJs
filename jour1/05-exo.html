@@ -7,35 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-
+    <div class="app">
         <article>
             <h2>{{articles[0].titre}}</h2>
             <button>{{articles[0].id}}</button>
         </article>
-
         <article>
             <h2>{{articles[1].titre}}</h2>
             <button>{{articles[1].id}}</button>
         </article>
-
-    </div>
-
+    </div><!-- balise doit être fermée directement -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <!-- avant la balise script -->
     <script>
         Vue.createApp({
-            data : () => {
+            data : function() {
                 return {
-                    articles : [
-                        {id : 1, titre : "article 1"},
-                        {id : 2, titre : "article 2"},
-
-                    ]
+                    articles : [ {id : 1 , titre : "article 1"}, {id : 2 , titre : "article 2"}]
                 }
             }
-        }).mount("#app")
+        }).mount(".app")
     </script>
-
 </body>
 </html>

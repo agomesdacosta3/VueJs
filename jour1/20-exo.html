@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @input="rechercher($event)" >
+        <div v-for="cocktail in cocktails">
+            <h1>{{ cocktail.strDrink }}</h1>
+            <p>{{ cocktail.strInstructions }} </p>
+            <img :src="cocktail.strDrinkThumb" alt="" width="200">
+            <hr>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        function Api(value , element){
+            fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+value)
+                    .then(reponse => reponse.json())
+                    .then(({drinks}) =>{
+                        // console.log(drinks);
+                        element.cocktails = drinks
+                    })
+        }
+
+        Vue.createApp({
+            data : () => {
+                return {
+                    recherche : "",
+                    cocktails : []
+                }
+            },
+            methods : {
+                rechercher : function($event){
+                    Api($event.target.value , this)
+                }
+            },
+            mounted : function(){
+                Api("margarita" , this)
+            }
+         }).mount("#app")
+        
+    </script>
+</body>
+</html>

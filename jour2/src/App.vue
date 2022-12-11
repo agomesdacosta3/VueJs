@@ -1,27 +1,34 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import Cinquieme from './components/Cinquieme.vue';
+import Deuxieme from './components/Deuxieme.vue';
+import Etudiants from './components/Etudiants.vue';
 import HelloWorld from './components/HelloWorld.vue'
 import Premier from "./components/Premier.vue"
-import Deuxieme from './components/Deuxieme.vue'
-import Troisieme from './components/Troisieme.vue';
 import Quatrieme from './components/Quatrieme.vue';
-import Cinquieme from './components/Cinquieme.vue';
+import SeptiemeVue from './components/Septieme.vue';
 import Sixieme from './components/Sixieme.vue';
-import Septieme from './components/Septieme.vue';
-
+import Troisieme from './components/Troisieme.vue';
+import Article from './components/Article.vue';
+import Data from './components/Data.vue';
+import Modifier from './components/Modifier.vue';
+import Directive from './components/Directive.vue';
 </script>
 
 <template>
-
+  <Directive />
+  <Modifier />
+  <Data />
   <Premier />
   <Deuxieme />
   <Troisieme />
   <Quatrieme />
   <Cinquieme />
   <Sixieme />
-  <Septieme />
-
+  <SeptiemeVue />
+  <Etudiants />
+  <Article />
 </template>
 
 <style scoped>

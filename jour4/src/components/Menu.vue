@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <RouterLink :to="{name:'suspense'}" class="nav-link">MySuspense</RouterLink>
                 </li>
+                <li class="nav-item">
+                    <RouterLink :to="{name:'api'}" class="nav-link">Api</RouterLink>
+                </li>
             </ul>
         </nav>
     </div>

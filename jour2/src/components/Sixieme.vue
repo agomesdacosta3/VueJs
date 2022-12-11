@@ -52,11 +52,13 @@
     //let fleurs = ref( ["rose", "jasmin" , "margueritte"]); // array // objet
     let fleurs = reactive( ["rose", "jasmin" , "margueritte"]); // array // objet
     let text = ref ("");// string //number // boolean
+
     const nbFleurs = computed(() => {
         console.log("exécution fleur")
         // return fleurs.value.length 
          return fleurs.length ;
     })
+
     const add = () => { 
         // fleurs.value.push("fleur en + ")
          fleurs.push("fleur en + ")

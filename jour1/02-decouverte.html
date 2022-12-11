@@ -7,15 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <div id = "app" >
-
-    </div>
-
+    <div id="app"></div>
+    <!-- dans cette balise tout le code vue (javascript) va être injecté dans cette balise 
+    vous pouvez mettre n'importe quelle identifiant à cette balise -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <!-- vuejs.org -->
     <script>
+        // installation finie 
+        // version 3
         Vue.createApp({}).mount("#app")
-    </script>
+        // liaison entre la balise et notre librairie 
 
+        // version 2
+        /* new Vue( {
+            el : "#app"
+        }) */
+    </script>
 </body>
 </html>

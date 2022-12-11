@@ -1,0 +1,33 @@
+// 
+
+parent 
+stocker les données 
+vous devez stocker la fonction qui modifie les données dans le même composant 
+
+=> MAIS je veux la déclencher dans l'enfant 
+
+envoyer la fonction comme un attribut du composant 
+
+function deleteCommentaire(parametre){
+}
+
+ <CommentaireVue  @suppr="deleteCommentaire"/>
+ @
+ evènement personnalisé => nom est à votre main 
+ = 
+ "méthode qui est stocké dans le composant parent"
+
+------------------
+
+const emit = defineEmits(["suppr"])
+
+
+<button @click="emit('suppr', objet)"><button>
+
+
+cas pratique 
+
+ajouter, pour chaque compteur,
+ un bouton pour diminuer la valeur nb 
+
+

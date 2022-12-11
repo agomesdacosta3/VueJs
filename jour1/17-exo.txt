@@ -2,13 +2,13 @@ créer un nouveau fichier 18-exo.html
 
 variable cocktails qui est un tableau vide par défaut 
 
-lorsque le composant monté (associé au DOM) => appeler l'api suivante 
+lorsque le composant est monté (c'est à dire associé au DOM) => appeler l'api suivante 
 
 www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 
 veuillez afficher dans le template 
 
-boucle de tous les cocktails récupérés
+boucler sur tous les cocktails récupérés
     <h1>nom du cocktail</h1>
     <p>description </p>
     <img src="image du cocktail" alt="">

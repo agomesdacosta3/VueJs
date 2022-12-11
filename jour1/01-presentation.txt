@@ -1,0 +1,65 @@
+VueJS / vue => c'est la même chose 
+
+c'est framework / grosse librairie qui permet de créer des UI 
+
+=> le créateur => travaillé chez Google / Angular 
+
+=> très inspiré de Angular version 1 
+
+=> version 1 de Vue mis à disposition en Février 2014
+
+=> Et si je pouvais juste extraire la partie que j'aime vraiment dans Angular et construire quelque chose de vraiment léger
+
+=> Progressive framework
+
+=> vue js peut être utilisé en Production dans un version HTML 
+=> version avec npm => télécharger du code 
+=> https://vuejs.org/
+
+
+=> la version de 2022  => version 3 du framework 
+=> 2 manières de faire 
+=> API options 
+=> API composition 
+
+-----------------------
+
+React versus VueJS 
+
+idems
+
+
+    Virtual DOM
+    state => données locales au composants
+    method => fonction associé à des évènements
+    props => envoyé des data / fonction du composant parent vers le composant enfant 
+    Redux VueX => Pinia => state manager global
+    composant => élément graphique de la page web 
+
+différents
+    // dans React 
+    => const [etudiants , setEtudiants] = useState([])
+    => function modif(){
+        const etudiantsClone = [...etudiants]
+        ....
+        setEtudiants(etudiantsClone) ; 
+    }
+
+    // directement 
+    // etudiants = []
+
+    // function modif(){
+        etudiants = [{id : 1, nom : "Alain"}]
+    }
+
+    // les variables dans VueJS sont "REACTIVES" 
+    => modifier la variable => entrainer la mise à jour du composant 
+
+    => pas de jsx => du html pur et dur 
+
+<template>
+</template>
+
+    => React / Angular (TypeScript) / Vue / Svelte 
+
+    

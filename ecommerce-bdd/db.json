@@ -1,0 +1,179 @@
+{
+  "catalogue": [
+    {
+      "id": 1,
+      "nom": "PlayStation 5",
+      "description": "lorem ipsum ",
+      "prix": 700,
+      "image": "https://via.placeholder.com/400x200.png?text=PS5",
+      "status": true
+    },
+    {
+      "id": 2,
+      "nom": "Nintendo DS",
+      "description": "lorem ipsum",
+      "prix": 500,
+      "image": "https://via.placeholder.com/400x200.png?text=Nintendo DS",
+      "status": true
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "client@yahoo.fr",
+      "password": "123456",
+      "role": "client"
+    },
+    {
+      "id": 2,
+      "email": "admin@yahoo.fr",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "email": "final@yahoo.fr",
+      "password": "123456",
+      "role": "client",
+      "id": 3
+    },
+    {
+      "email": "final2@yahoo.fr",
+      "password": "123456",
+      "role": "client",
+      "id": 4
+    },
+    {
+      "email": "final3@yahoo.fr",
+      "password": "123456",
+      "role": "client",
+      "id": 5
+    }
+  ],
+  "commandes": [
+    {
+      "user": {
+        "email": "loulou@yahoo.fr"
+      },
+      "produits": [
+        {
+          "id": 2,
+          "nom": "Nintendo DS",
+          "description": "lorem ipsum",
+          "prix": 500,
+          "image": "https://via.placeholder.com/400x200.png?text=Nintendo DS",
+          "status": true,
+          "quantite": 1
+        }
+      ],
+      "livraison": {
+        "rue": "33 rue de Paris",
+        "cp": 75000,
+        "ville": "Paris"
+      },
+      "dt_creation": 1669993175662,
+      "total": 500,
+      "status": "à traiter",
+      "id": 1
+    },
+    {
+      "user": {
+        "email": "final@yahoo.fr"
+      },
+      "produits": [
+        {
+          "id": 2,
+          "nom": "Nintendo DS",
+          "description": "lorem ipsum",
+          "prix": 500,
+          "image": "https://via.placeholder.com/400x200.png?text=Nintendo DS",
+          "status": true,
+          "quantite": 3
+        }
+      ],
+      "livraison": {
+        "rue": "45 rue de New York",
+        "cp": 75000,
+        "ville": "New York"
+      },
+      "dt_creation": 1669996270768,
+      "total": 1500,
+      "status": "à traiter",
+      "id": 2
+    },
+    {
+      "user": {
+        "email": "final2@yahoo.fr"
+      },
+      "produits": [
+        {
+          "id": 2,
+          "nom": "Nintendo DS",
+          "description": "lorem ipsum",
+          "prix": 500,
+          "image": "https://via.placeholder.com/400x200.png?text=Nintendo DS",
+          "status": true,
+          "quantite": 1
+        }
+      ],
+      "livraison": {
+        "rue": "40 rue de Lille",
+        "cp": 75000,
+        "ville": "Lille"
+      },
+      "dt_creation": 1669996421553,
+      "total": 500,
+      "status": "à traiter",
+      "id": 3
+    },
+    {
+      "user": {
+        "email": "final2@yahoo.fr"
+      },
+      "produits": [
+        {
+          "id": 2,
+          "nom": "Nintendo DS",
+          "description": "lorem ipsum",
+          "prix": 500,
+          "image": "https://via.placeholder.com/400x200.png?text=Nintendo DS",
+          "status": true,
+          "quantite": 1
+        }
+      ],
+      "livraison": {
+        "rue": "40 rue de Bordeaux",
+        "cp": 75000,
+        "ville": "Bordeaux"
+      },
+      "dt_creation": 1669996512340,
+      "total": 500,
+      "status": "à traiter",
+      "id": 4
+    },
+    {
+      "user": {
+        "email": "final3@yahoo.fr"
+      },
+      "produits": [
+        {
+          "id": 1,
+          "nom": "PlayStation 5",
+          "description": "lorem ipsum ",
+          "prix": 700,
+          "image": "https://via.placeholder.com/400x200.png?text=PS5",
+          "status": true,
+          "quantite": 1
+        }
+      ],
+      "livraison": {
+        "rue": "40 rue de Paris",
+        "cp": 75000,
+        "ville": "Issy les Moulineaux"
+      },
+      "dt_creation": 1669996853843,
+      "total": 700,
+      "status": "à traiter",
+      "id": 5
+    }
+  ]
+}

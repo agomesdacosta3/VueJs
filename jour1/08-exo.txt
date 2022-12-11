@@ -9,7 +9,7 @@ user : {
     competences : ["js" , "node", "angular"],
     age : 18 
 }
-dans le composant afficher le template le html suivant :
+dans le composant afficher dans le template le html suivant :
 <h1>Alain</h1>
 <ul>
     <li>js</li>

@@ -15,6 +15,7 @@
     import { useRoute } from "vue-router"
     import { ref , onMounted} from "vue"
     const article = ref({});
+
     onMounted(() => {
         const route = useRoute();
         const id = route.params.id ;
@@ -54,4 +55,5 @@ export default {
             .then(data => this.article = data)
     }
 }
+
 </script>

@@ -1,0 +1,23 @@
+npm i -g json-server
+
+outil json-server qui permet de créer une API avec une base de données NoSQL
+
+cd ../jour3-bdd
+json-server db.json --watch --port=3400 
+lancer ma base de données
+
+cas pratique :
+dans la page d'accueil => ajouter un formulaire 
+un seul champ => nom tâche (un seul input )
+lorsque vous soumettez le formulaire 
+
+reéaliser une requepte JSON vers l'adresse suivante 
+http://localhost:3400/taches
+en POST et vous allez ajouter le contenu du input dans la base 
+
+
+Cas pratique 
+ajouter sous chaque tâche un bouton qui permet de supprimer la tâche 
+2 actions :
+a/ requete ajax de type DELETE et supprimer dans le fichier db.json la tâche concernée
+b/ mettre à jour le state en même temps 

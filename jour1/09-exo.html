@@ -8,15 +8,12 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{user.nom}}</h1>
-
+        <h1>{{ user.nom }}</h1>
         <ul>
             <li v-for="competence in user.competences">{{ competence }}</li>
         </ul>
-
-        <p v-if="user.age < 18">Il est mineur</p>
-        <p v-else>Il est majeur</p>
-        
+        <p v-if="user.age < 18">il est mineur</p>
+        <p v-else>il est majeur</p>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
@@ -25,13 +22,14 @@
                 return {
                     user : {
                         id : 1 ,
-                        nom : "Alain",
+                        nom : "Alain" ,
                         competences : ["js" , "node", "angular"],
                         age : 18 
                     }
                 }
             }
         }).mount("#app")
+
     </script>
 </body>
 </html>

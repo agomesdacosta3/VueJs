@@ -24,22 +24,20 @@
             {{ JSON.stringify(etudiants) }}
         </pre>
     </div>
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
     <script>
         Vue.createApp({
             data : () => {
-                return {
-                    titre : "Découverte de VueJS",
-                    like : 33,
-                    etudiants : ["Alain", "Benoît", "Céline"],
-                    fleur : {id : 1, nom : "rose"},
-                    isAdmin : true
+                return  {
+                    img : "https://via.placeholder.com/400x200" ,
+                    titre : "Découverte de vueJS",
+                    like : 30 ,
+                    etudiants : ["Alain", "Benois" , "Céline"] ,
+                    fleur : {id : 1 , nom :"rose" },
+                    isAdmin : false 
                 }
             }
         }).mount("#app")
     </script>
-
 </body>
 </html>

@@ -1,0 +1,14 @@
+créer un nouveau composant  Directive.vue
+créer une directive v-more => si la valeur 
+
+<div v-more="texte"></div> 
+permet de remplir la balise concernée div avec les 10 premiers mots de texte
+
+<div v-more.long="texte"></div>  
+permet de remplir la balise concernée div avec les 20 premiers mots de texte
+
+data(){
+    return {
+        texte : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima, vitae ratione quos sed quasi sequi adipisci consequatur deleniti debitis at, aperiam, corrupti odio. Maxime aspernatur enim rem ullam animi facilis autem nihil, sed fugit aliquam voluptates inventore non expedita qui. Quidem aliquid perspiciatis eaque? Fuga esse blanditiis voluptatibus porro!"
+    }
+}

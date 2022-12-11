@@ -1,0 +1,60 @@
+site e commerce 
+
+front 
+    1 - page d'accueil qui présente le catalogue
+    2 - page single => affiche le produit + bouton commander et un input pour mettre la quantité
+    3 - panier => créer une session pinia 
+    4 - identification 
+        - 2 formulaires 
+            créer un profil / s'identifier 
+    5 - checkout 
+        - le nom du client
+        - panier 
+        - adresse de livraison 
+        - paiement 
+    6 - Profil utilisateur 
+        - la liste des commandes réalisées par le client 
+    7 page de connexion 
+
+Back office 
+    - page d'accueil 
+    - gestion du catalogue CRUD 
+    - gestion des profils USERS (client / admin) CRUD 
+    - gestion des commandes CRUD => modifier le status de la commande par défaut status à traiter => finalisée 
+
+
+json-server 
+=> créer une base de données json 
+
+2 tables 
+    catalogues [
+        {id , nom , description , image , status }
+    ],
+    users : [
+        { id , email , password , role : "admin/client" }
+    ],
+    commandes : [
+        {
+            id : 
+            client : {email}
+            livraison : { rue , cp , ville }
+            panier : [],
+            status : "à traiter / à livrer / finalisé"
+        },
+
+    ]
+    // stocker le panier => dans un store 
+
+
+=> démarrer la base de données => positionner dans le dossier ecommerce-bdd 
+json-server db.json --watch --port=3004
+
+http://localhost:3004/catalogues
+http://localhost:3004/users
+
+=> créer un nouveau projet vuejs => 
+installer vue / pinia / vue-router 
+
+=> créer la barre de menu 
+// créer la page d'accueil 
+// page single 

@@ -1,0 +1,16 @@
+créer le composant Septieme
+
+vue 
+    afficher 
+        <ul>
+            li Alain - inscrit le 29/11/2022
+            li Benois - inscrit le 01/01/2021
+        </ul>
+
+// Intl.DateTimeFormat
+
+script 
+etudiants : [
+    {nom : "Alain" , dtInscription : new Date()},
+    {nom : "Benois" , dtInscription : new Date(2021, 0,1)},
+]

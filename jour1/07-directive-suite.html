@@ -15,6 +15,7 @@
         v-if v-else-if v-else => conditions pour afficher une élément
     -->
         <p v-show="afficher">{{ text }}</p>
+        <p v-show="afficher" v-html="text"></p>
         <p v-if="fleurs.length === 0">aucune fleur</p>
         <p v-else-if="fleurs.length <= 3">{{ JSON.stringify(fleurs) }}</p>
         <p v-else>response inconnue ??</p>

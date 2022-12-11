@@ -1,0 +1,27 @@
+dans la composant Accueil 
+réalisez une requête ajax vers l'api suivante :
+https://jsonplaceholder.typicode.com/posts
+
+afficher les articles dans le composant en utilisant une boucle v-for 
+
+<article>
+    <h2>title</h2>
+    <p>body</p>
+    <RouterLink >lire la suite ... </RouterLink > 
+</article>
+
+=> mounted 
+
+=> API Options / Api Composition 
+
+------------------------
+
+// cas pratique :
+=> créer une directive qui permet d'afficher uniquement les 3 premiers mots pour les titres 
+=> créer une directive qui permet d'afficher uniquement les 5 premiers mots pour les body
+
+Cas pratique :
+// 1 créer une nouvelle page accessible via l'adresse login 
+// 2 afficher une page contenant un formulaire avec deux champs 
+login et password 
+// 3 ajouter le lien dans la barre de menu 

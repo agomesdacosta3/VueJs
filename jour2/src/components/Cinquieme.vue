@@ -40,8 +40,10 @@ export default {
 </script> -->
 <!-- <script setup>
 import {ref} from "vue"
+
 let login = ref("");
 let password = ref("");
+
 function submit (event){
     event.preventDefault();
     const profil = {
@@ -50,11 +52,14 @@ function submit (event){
     }
     console.log(profil);
 }
+
 </script> -->
 
 <script setup>
+
 let login = "";
 let password = "";
+
 function submit (event){
     event.preventDefault();
     const profil = {
@@ -63,6 +68,7 @@ function submit (event){
     }
     console.log(profil);
 }
+
 </script>
 
 
@@ -76,3 +82,4 @@ input[type="text"], input[type="password"]{
     margin: 20px 0;
 }
 </style>
+
