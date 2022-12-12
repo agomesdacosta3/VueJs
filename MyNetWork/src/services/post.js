@@ -13,7 +13,7 @@ export default class PostApi{
 
     async getAll(){
         try{
-            const reponse = await fetch(this.url);
+            const reponse = await fetch(this.url+"?sort=date:desc");
             const data = await reponse.json()
             return data
         }catch(ex){

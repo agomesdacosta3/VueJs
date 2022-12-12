@@ -10,7 +10,7 @@
                 <input type="password" @focus="show = false" class="form-control" id="password" v-model="password" placeholder="password">
             </div>
             <div class="mb-3">
-                <input type="submit" class="btn btn-warning">
+                <input type="submit" class="btn btn-warning" value="Se connecter">
             </div>
             <div class="alert alert-danger" v-if="show">
                 <div v-for="message in messages">{{ message }}</div>

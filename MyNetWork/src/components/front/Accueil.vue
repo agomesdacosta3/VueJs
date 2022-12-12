@@ -13,5 +13,4 @@
 <script setup>
     import {Suspense} from "vue";
     import AccueilFil from "./AccueilFil.vue";
-
 </script>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import Accueil from "./components/front/Accueil.vue"
 import Login from "./components/front/Login.vue"
+import Logout from "./components/front/Logout.vue"
 import Inscription from "./components/front/Inscription.vue"
 
 
@@ -9,6 +10,7 @@ export const router = createRouter({
     routes : [
         {path : "/" , name : "accueil" , component: Accueil},
         {path : "/inscription" , name : "inscription" , component: Inscription},
-        {path : "/login" , name : "login" , component: Login}
+        {path : "/login" , name : "login" , component: Login},
+        {path : "/logout" , name : "logout" , component: Logout}
     ]
 })

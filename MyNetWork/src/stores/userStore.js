@@ -44,7 +44,11 @@ export const useUserStore = defineStore("userStore" , {
             }
 
         },
+
         logout : function(){
+
+            this.utilisateurs = {} ;
+            return {message : "ok" } ;
 
         },
 
