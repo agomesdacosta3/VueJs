@@ -2,21 +2,19 @@
 
     {{onMounted()}}
 
-    {{JSON.stringify(userStore.utilisateurs)}}
-
     <div class="container">
 
         <article v-if="connecte" style="border: solid; margin-bottom: 15px; width: 1000px;">
 
             <h2>Quoi de neuf ?</h2>
 
-            <form @submit.prevent="newPost">
+            <form @submit.prevent="newPost(users,articles)">
                 <div class="mb-3">
-                    <input type="text-area" class="form-control" id="nouveauPost" v-model="nouveauPost" 
+                    <input type="text-area" class="form-control" id="contenuComm" v-model="contenuPost"
                     placeholder="laissez un nouveau post">
                 </div>
                 <div class="mb-3">
-                    <input type="text" @focus="show = false" class="form-control" id="urlImgProfil" v-model="urlImgProfil"
+                    <input type="text" @focus="show = false" class="form-control" id="urlNewPost" v-model="urlNewPost"
                     placeholder="https://source.unsplash.com/random/1000x300">
                 </div>
                 <div class="mb-3">
@@ -53,7 +51,7 @@
                 <span style="margin-left: 10px; margin-top: 3px; text-align: center;  border-radius: 20px; background-color:lightblue; color:black ;
                  width: 30px; height: 30px;">{{post.like}}</span>
 
-                <button style="margin-left: 30px;"><img style="margin-right: 5px;" 
+                <button style="margin-left: 30px;" @click="comm()"><img style="margin-right: 5px;" 
                     src="./../../comment.png" />Commenter</button>
 
                 <span style="margin-left: 10px; margin-top: 3px; text-align: center;  border-radius: 20px; background-color:lightgreen; color:black ;
@@ -78,10 +76,11 @@
             <div v-if="connecte">
                 <p>Ajouter un commentaire :</p>
 
-                <form @submit.prevent="newComm">
+                <form @submit.prevent="newComm(post.id,users,articles)">
                     <div class="d-flex">
                         <div class="mb-3">
-                            <input type="text-area" placeholder="Laissez un commentaire..." class="form-control w-80 me-2">
+                            <input type="text-area" placeholder="Laissez un commentaire..." 
+                            class="form-control w-80 me-2" v-model="contenuComm">
                         </div>
                         <div class="mb-3">
                             <input type="submit" class="btn btn-outline-dark" value="Publier">
@@ -110,6 +109,10 @@
     let users = ref([]);
     let connecte = ref(false) ;
 
+    const contenuComm = ref("")
+    const contenuPost = ref("")
+    const urlNewPost = ref("")
+
     const userStore = useUserStore() ;
  
     onMounted( () => {
@@ -120,56 +123,95 @@
 
     async function like (id) {
 
-        const api = new PostApi()
-        const data = await api.getOne(id)
+        if (connecte.value === true) {
 
-        const newArticle = data ;
+            const api = new PostApi()
+            const data = await api.getOne(id)
 
-        newArticle.like += 1 ;
+            const newArticle = data ;
 
-        console.log(newArticle)
+            newArticle.like += 1 ;
 
-        try{
-            const options = {
-                method : "PUT",
-                body: JSON.stringify(
-                    {
-                        id : newArticle.id,
-                        contenu : newArticle.contenu,
-                        urlImgArticle : newArticle.urlImgArticle,
-                        like : newArticle.like,
-                        pseudo : newArticle.pseudo,
-                        date : newArticle.date,
-                        commentaires : newArticle.commentaires
+            try{
+                const options = {
+                    method : "PUT",
+                    body: JSON.stringify(
+                        {
+                            id : newArticle.id,
+                            contenu : newArticle.contenu,
+                            urlImgArticle : newArticle.urlImgArticle,
+                            like : newArticle.like,
+                            pseudo : newArticle.pseudo,
+                            date : newArticle.date,
+                            commentaires : newArticle.commentaires
+                        }
+                    ),
+                    headers : {
+                        "content-type" : "application/json"
                     }
-                ),
-                headers : {
-                    "content-type" : "application/json"
                 }
+
+                const reponse = await fetch("http://localhost:3004/articles/"+id, options)
+                const data = await reponse.json();
+
+                return data ;
+
+            }catch(ex){
+                console.log(ex)
             }
-
-            const reponse = await fetch("http://localhost:3004/articles/"+id, options)
-            const data = await reponse.json();
             
-            return data ;
+            getArticles();
 
-        }catch(ex){
-            console.log(ex)
+        } else {
+            alert("Veuillez vous connecter afin de pouvoir liker ce post")
         }
         
     }
+
+    function comm () {
+        if (connecte.value === true) {
+           // router.push("/#newComm")
+        } else {
+            alert("Veuillez vous connecter afin de pouvoir commenter ce post")
+        }
+    }
     
-    // async function newPost (){
+    async function newPost (users,articles) {
 
-        
+        const newPost = {
+            id : articles.length + 1,
+            contenu : contenuPost.value ,
+            urlImgArticle : urlNewPost.value,
+            like : 0,
+            pseudo : getPseudo(users,userStore.utilisateurs.email),
+            date : getCurrentTimestamp(),
+            commentaires: []
+        }
 
-    // }
+        const postApi = new PostApi()
+        const data = await postApi.create(newPost)
+    }
 
-    // async function newComm (){
+    async function newComm (id, users, articles){
 
-        
+        const comm = getArticle(id,articles) ;
 
-    // }
+        const newComm = {
+            id : comm.commentaires.length + 1,
+            contenu : contenuComm.value ,
+            pseudo : getPseudo(users,userStore.utilisateurs.email),
+            dt : getCurrentTimestamp()
+        }
+
+        comm.commentaires.push(newComm)
+
+        const postApi = new PostApi()
+        const data = await postApi.createComm(id,comm)
+
+        getUsers();
+        getArticles();
+
+     }
 
     async function getArticles(){
         const api = new PostApi()
@@ -199,8 +241,36 @@
     }
 
     function getTimeByTimestamp(timestamp) {
-        let time = new Date(timestamp*1000);
-        return time.getHours() + "h" + time.getMinutes() ;
+        let date = new Date(timestamp*1000);
+
+        let timeHours = date.getHours() ;
+        let timeMinutes = date.getMinutes() ;
+
+        if (timeMinutes < 10) {
+            timeMinutes = "0"+timeMinutes ;
+        } 
+        return timeHours + "h" + timeMinutes ;
+    }
+
+    function getCurrentTimestamp() {
+       const currentTimestamp = Date.now();
+       return Math.trunc(currentTimestamp/1000) ;
+    }
+
+    function getPseudo(users,email) {
+        for (let i  = 0; i < users.length; i++) {
+            if ( email === users[i].email) {
+                return users[i].pseudo ;
+            }
+        }  
+    }
+
+    function getArticle(idArticle,articles) {
+        for (let i  = 0; i < articles.length; i++) {
+            if ( idArticle === articles[i].id) {
+                return articles[i] ;
+            }
+        }
     }
 
 </script>
